@@ -1,0 +1,217 @@
+---
+title: "Cultivar Data 2019-2023"
+author: 
+    - name: Alan R. Vazquez
+      orcid: 0000-0002-3658-0911
+      email: alanrvazquez@tec.mx
+format: 
+  dashboard:
+    orientation: rows
+server: shiny
+---
+
+```{r}
+#| context: setup
+#| echo: false
+#| output: false
+
+# Load libraries.
+library(tidyverse)
+library(readxl)
+library(ggplot2)
+library(ggformula)
+
+################################################################################
+# Read data
+################################################################################
+rice.data = read_excel("data/cultivar_data_2019-2023.xlsx")
+
+################################################################################
+# Preprocessing
+################################################################################
+
+rice.data = rice.data %>%  mutate_at(c("Year", "Cultivar", "PurelineHybrid", "Grain Size"), as.factor)
+
+select_variables = tbl_vars(rice.data)[c(5:12, 63:67)]
+subset_rice.data = rice.data %>% select(all_of(select_variables))
+
+time_variables = c("MRY", "HRY", "SLC", "NIR_ColorL", "NIR_Colora", "NIR_Colorb", "NIR_ProtCont", "HCM_L", "HCM_a", "HCM_b")
+var_names = c(tbl_vars(subset_rice.data), time_variables)
+ 
+################################################################################
+# Plot theme
+################################################################################
+
+ytext <- 18
+xtext <- ytext
+y.axis.title <- 20
+x.axis.title <- y.axis.title
+legtext <- 18
+
+plot.theme <- theme(axis.text.y  = element_text(size=ytext, colour = 'black'), axis.text.x  = element_text(size=xtext, colour = 'black'),
+                    axis.title.y  = element_text(size=y.axis.title, vjust=0.9),
+                    axis.title.x  = element_text(size=x.axis.title),
+                    panel.background = element_rect(fill = "white", colour = 'black'),
+                    legend.text = element_text(size = legtext), legend.title = element_text(size=legtext),
+                    plot.title = element_text(lineheight=.8, face="bold", size = 20),
+                    strip.text = element_text(size=15), strip.text.x = element_text(size=20, face="bold"),
+                    panel.border = element_rect(linetype = "solid", colour = "black", fill = NA),
+                    panel.grid.major = element_line(colour = "grey92", linetype = "dashed"),
+                    panel.grid.minor = element_line(colour = "grey92", linetype = "dashed"))
+
+
+```
+
+
+# {.sidebar}
+
+```{r}
+#| title: Inputs
+#selectInput("sampleSize", "Number of subjects:", 
+#            unique(summary_results$n))
+#radioButtons("year", "Year:", 
+#            c("All", "2019", "2020", "2021", "2022", "2023"))
+
+#varSelectInput("variable", "Quality Parameter:", subset_rice.data)
+selectInput("variable", "Quality Parameter:", var_names)
+```
+
+```{r}
+#| context: server
+#| echo: false
+#| output: false
+
+dataset = reactive({
+    if (input$variable %in% time_variables){
+        my.data = rice.data %>% select(starts_with(input$variable))
+        my.data = my.data %>% rename_with(~str_remove(., paste(input$variable, '_', sep = '')))
+        my.data = my.data %>% rename_with(~str_remove(., 's'))
+        var_sel = my.data %>%  colnames()
+        my.data = my.data %>% mutate("Year" = rice.data$Year, "PurelineHybrid" = rice.data$PurelineHybrid,
+                                     "Grain Size" = rice.data$`Grain Size`)
+        my.data = my.data %>% pivot_longer(cols = all_of(var_sel), names_to = "Time", values_to = input$variable)
+        my.data = my.data %>% mutate_at("Time", as.numeric)  
+    } else {
+      my.data = subset_rice.data %>% select(input$variable)    
+    }
+    
+  my.data
+})
+
+```
+
+
+# Overall
+
+Distribution of the rice quality parameters.
+
+## Comparisons
+
+```{r}
+#| context: server
+
+output$Histogram <- renderPlot({
+  if (input$variable %in% time_variables){
+    my.plot = ggplot(dataset(), aes(y = .data[[input$variable]], x = Time)) + geom_point()
+    my.plot = my.plot + stat_summary(aes(y = .data[[input$variable]],group=1), fun.y=mean, colour="red", geom="line",group=1)
+  } else { 
+      my.plot = ggplot(dataset(), aes(x = .data[[input$variable]])) + geom_histogram(color = "black", fill = "gray") 
+  my.plot = my.plot + ylab("Frequency")
+  }
+  my.plot = my.plot + plot.theme
+  print(my.plot)
+})
+```
+
+```{r}
+#| title: Distribution
+plotOutput("Histogram")
+```
+
+# By Year
+
+Distribution of the rice quality parameters by year.
+
+```{r}
+#| context: server
+
+output$BoxplotYear <- renderPlot({
+  
+  if (input$variable %in% time_variables){
+    
+    my.plot = ggplot(dataset(), aes(y = .data[[input$variable]], x = Time, color = Year, group = Year)) + stat_summary(geom = "line", fun.y = mean) + stat_summary(geom = "point", fun.y = mean)
+    
+  } else {
+    YearData = rice.data %>% select("Year")
+    YearDataset = dataset() %>% mutate(YearData)
+    my.plot = ggplot(YearDataset, aes(x = Year, y = .data[[input$variable]])) + geom_boxplot() 
+    my.plot = my.plot + ylab(as.character(input$variable))  
+  }
+  
+  
+  my.plot = my.plot + plot.theme
+  print(my.plot)
+})
+```
+
+```{r}
+#| title: Distribution by Year
+plotOutput("BoxplotYear")
+```
+
+# By Type
+
+Distribution of the rice quality parameters by their type (Pureline or Hybrid).
+
+```{r}
+#| context: server
+
+output$BoxplotType <- renderPlot({
+  
+  if (input$variable %in% time_variables){
+    my.plot = ggplot(dataset(), aes(y = .data[[input$variable]], x = Time, color = PurelineHybrid, group = PurelineHybrid)) + stat_summary(geom = "line", fun.y = mean) + stat_summary(geom = "point", fun.y = mean)
+  } else {
+      PureLineData = rice.data %>% select("PurelineHybrid")
+      PureLineDataset = dataset() %>% mutate(PureLineData)
+      my.plot = ggplot(PureLineDataset, aes(x = PurelineHybrid, y = .data[[input$variable]])) + geom_boxplot() 
+      my.plot = my.plot + ylab(as.character(input$variable))
+  }
+  
+  my.plot = my.plot + plot.theme
+  print(my.plot)
+})
+```
+
+```{r}
+#| title: Distribution by Type
+plotOutput("BoxplotType")
+```
+
+# By Size
+
+Distribution of the rice quality parameters by their grain size (long or medium).
+
+```{r}
+#| context: server
+
+output$BoxplotGrain <- renderPlot({
+  
+    if (input$variable %in% time_variables){
+    my.plot = ggplot(dataset(), aes(y = .data[[input$variable]], x = Time, color = `Grain Size`, group = `Grain Size`)) + stat_summary(geom = "line", fun.y = mean) + stat_summary(geom = "point", fun.y = mean)
+  } else {
+    GrainData = rice.data %>% select("Grain Size")
+    GrainDataset = dataset() %>% mutate(GrainData)
+    my.plot = ggplot(GrainDataset, aes(x = `Grain Size`, y = .data[[input$variable]])) + geom_boxplot() 
+    my.plot = my.plot + ylab(as.character(input$variable))
+  }
+  
+  my.plot = my.plot + plot.theme
+  print(my.plot)
+  
+})
+```
+
+```{r}
+#| title: Distribution by Grain Size
+plotOutput("BoxplotGrain")
+```
