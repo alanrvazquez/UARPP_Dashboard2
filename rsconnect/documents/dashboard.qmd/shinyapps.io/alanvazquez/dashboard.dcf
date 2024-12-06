@@ -1,0 +1,14 @@
+name: dashboard
+title: dashboard
+username: alanvazquez
+account: alanvazquez
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13542799
+bundleId: 9475846
+url: https://alanvazquez.shinyapps.io/dashboard/
+version: 1
+quarto_version: 1.5.57
+quarto_engines: knitr
+asMultiple: FALSE
+asStatic: FALSE
