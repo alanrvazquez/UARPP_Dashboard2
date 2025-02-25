@@ -1,0 +1,59 @@
+/*-- scss:defaults --*/
+// Define UARPP Logo Colors
+$primary: #A0192E; // Dark red
+$secondary: #C49A6C; // Gold accent
+$body-bg: #ffffff; // White background
+$body-color: #000000; // Black text
+$font-family-base: "Georgia", serif;
+
+/*-- scss:rules --*/
+// Apply theme styles
+body {
+  background-color: $body-bg;
+  font-family: $font-family-base;
+  color: $body-color;
+}
+
+// Navbar styling with logo
+.navbar {
+  background-color: $primary !important;
+  border-bottom: 3px solid $secondary;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  max-height: 60px; // Adjust as needed
+  margin-right: 15px;
+}
+
+// Button styling
+.btn-primary {
+  background-color: $primary !important;
+  border-color: darken($primary, 10%) !important;
+}
+
+.btn-primary:hover {
+  background-color: darken($primary, 10%) !important;
+}
+
+// Card styling
+.card {
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid $secondary;
+}
+
+// Footer styling
+.footer {
+  background-color: $body-color;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}

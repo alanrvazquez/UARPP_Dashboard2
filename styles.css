@@ -1,0 +1,36 @@
+/* General Styling */
+  body {
+    background-color: #ffffff;  /* White background */
+      font-family: "Georgia", serif;  /* Professional serif font */
+      color: #003300;  /* Dark green text */
+  }
+
+/* Header */
+  .navbar {
+    background-color: #006400 !important; /* Dark green header */
+      border-bottom: 3px solid #8FBC8F; /* Light green accent */
+  }
+
+/* Buttons */
+  .btn-primary {
+    background-color: #006400 !important; /* Dark green button */
+      border-color: #004d00 !important; /* Slightly darker border */
+  }
+
+.btn-primary:hover {
+  background-color: #004d00 !important; /* Darker green on hover */
+}
+
+/* Panels and Cards */
+  .card {
+    border-radius: 5px;  /* Slightly rounded corners */
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+  }
+
+/* Footer */
+  .footer {
+    background-color: #003300; /* Dark green footer */
+      color: white;
+    padding: 10px;
+    text-align: center;
+  }
