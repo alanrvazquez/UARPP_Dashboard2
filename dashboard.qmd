@@ -118,6 +118,59 @@ dataset = reactive({
 
 # Introduction
 
+##
+
+**Welcome to the Rice Processing Program Dashboard**
+
+Rice is a staple food for over half of the world's population, with Asia being
+its primary consumer base. As global demand continues to rise due to population
+growth and changing dietary patterns, optimizing rice production and quality has
+become essential. The state of Arkansas, known for its rich rice heritage, is a
+leading producer of rice in the United States. Understanding the variation in
+milling efficiency and physicochemical attributes among Arkansas rice cultivars
+is crucial for enhancing the competitiveness of the state's rice sector and
+meeting consumer preferences.
+
+Our research aims to comprehensively assess the variation among Arkansas rice
+cultivars concerning milling efficiency and physicochemical attributes,
+including amylose content, gelatinization temperature, and grain dimensions. By
+analyzing a diverse range of cultivars under controlled conditions, we seek to
+elucidate the genetic and environmental factors contributing to differences in
+rice quality.
+
+This dashboard provides an interactive platform for exploring the data collected
+from our research study. Through various visualizations and metrics, you can:
+
+* Explore the variation in milling efficiency and physicochemical attributes
+among different Arkansas rice cultivars
+* Identify similarities and differences between cultivars based on their milling
+yield and physicochemical attributes
+* Access detailed information about individual cultivars, including their
+genetic and environmental characteristics
+
+By leveraging this dashboard, we hope to provide valuable insights into the
+factors influencing rice quality and inform breeding programs aimed at
+developing cultivars with superior milling and physicochemical characteristics.
+We also aim to contribute to the global understanding of rice quality and its
+determinants.
+
+##
+
+**Explore the Data**
+
+Use the navigation menu on the left to access different sections of the
+dashboard, including:
+
+* Cultivar Comparison: Compare the milling efficiency and physicochemical
+attributes of different cultivars
+* Attribute Analysis: Explore detailed information about individual attributes,
+such as amylose content and gelatinization temperature
+* Correlation Analysis: Identify relationships between different attributes and
+factors influencing rice quality
+
+We hope this interactive platform will facilitate a deeper understanding of the
+complexities involved in rice production and quality, ultimately benefiting rice
+breeders, producers, and consumers alike.
 
 # Overall
 
