@@ -19,6 +19,7 @@ library(tidyverse)
 library(readxl)
 library(ggplot2)
 library(ggformula)
+library(factoextra) # For cluster analysis
 
 ################################################################################
 # Read data
@@ -37,6 +38,11 @@ subset_rice.data = rice.data %>% select(all_of(select_variables))
 time_variables = c("MRY", "HRY", "SLC", "NIR_ColorL", "NIR_Colora", "NIR_Colorb", "NIR_ProtCont", "HCM_L", "HCM_a", "HCM_b")
 var_names = c(tbl_vars(subset_rice.data), time_variables)
  
+# Data for clustering
+
+#grouping.data = rice.data %>% filter(Year == 2022) %>% select(c("Cultivar","Peak","Trough", "Breakdown", "Setback", "Final"))
+grouping.data = rice.data %>% select(c("Peak","Trough", "Breakdown", "Setback", "Final"))
+
 ################################################################################
 # Plot theme
 ################################################################################
@@ -77,6 +83,7 @@ plot.theme <- theme_minimal() +
 
 #varSelectInput("variable", "Quality Parameter:", subset_rice.data)
 selectInput("variable", "Quality Parameter:", var_names)
+sliderInput("k", "Groups:", min = 2, max = 5, value = 3)
 ```
 
 ```{r}
@@ -101,7 +108,15 @@ dataset = reactive({
   my.data
 })
 
+# Enhanced k-means clustering
+#res.hclust = reactive({
+#  eclust(my.data[,c("PeakTime","PastingTemp")], "hclust", k = input$k)
+#  })
+
+
 ```
+
+# Introduction
 
 
 # Overall
@@ -218,3 +233,36 @@ output$BoxplotGrain <- renderPlot({
 #| title: Distribution by Grain Size
 plotOutput("BoxplotGrain")
 ```
+
+# Clustering
+
+```{r}
+#| context: server
+
+output$ClusterAnalysis <- renderPlot({
+  res.hclust <- eclust(grouping.data, "hclust", k = input$k)
+  fviz_dend(res.hclust, rect = TRUE) + plot.theme # dendrogam
+})
+```
+
+```{r}
+#| title: Clustering by pasting properties
+plotOutput("ClusterAnalysis")
+```
+
+# PCA
+
+```{r}
+#| context: server
+
+output$PCA <- renderPlot({
+  res.km <- eclust(grouping.data, "kmeans", nstart = 25, k = input$k) 
+  res.km + plot.theme 
+})
+```
+
+```{r}
+#| title: Data vsualization
+plotOutput("PCA")
+```
+
