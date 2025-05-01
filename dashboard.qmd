@@ -14,6 +14,7 @@ server: shiny
 #| echo: false
 #| output: false
 
+#install.packages("zoo")
 # Load libraries.
 library(tidyverse)
 library(readxl)
@@ -21,6 +22,7 @@ library(ggplot2)
 library(ggformula)
 library(factoextra) # For cluster analysis
 library(zoo) # For Area Under the Curve (AUC)
+library(DT)
 
 ################################################################################
 # Read data
@@ -48,6 +50,7 @@ pasting.data = rice.data %>% select(c("Cultivar", "Peak", "Trough", "Breakdown",
 # Data for HRY, MRY, Field Fissures, and WBrown_Chalk only.
 varis.for.auc = c("MRY", "HRY")
 recorded.time <- c(10, 15, 20, 30, 40)
+
 AUC <- function(x, z){
   sum(diff(z)*rollmean(x,2))
 }
@@ -341,14 +344,16 @@ These are the numeric labels used for the cluster analysis of cultivars.
 ```{r}
 #| context: server
 
-output$TableLabels <- renderTable({
+output$TableLabels <- renderDataTable({
   label_df <- data.frame(
   "Label" = 1:nrow(pasting.data[,1]),
   "Cultivar" = pasting.data[,1])
+  
+  datatable(label_df)
 })
 ```
 
 ```{r}
 #| title: Cultivar labels
-tableOutput("TableLabels")
+dataTableOutput("TableLabels")
 ```
