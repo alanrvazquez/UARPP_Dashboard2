@@ -64,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
         
       </div>
     </div>
-<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-introduction" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#introduction" data-scrolling="false" href="#introduction" aria-controls="introduction" aria-selected="true"><span class="nav-link-text">Introduction</span></a></li><li class="nav-item" role="presentation"><a id="tab-overall" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#overall" data-scrolling="false" href="#overall" aria-controls="overall" aria-selected="false"><span class="nav-link-text">Overall</span></a></li><li class="nav-item" role="presentation"><a id="tab-by-year" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#by-year" data-scrolling="false" href="#by-year" aria-controls="by-year" aria-selected="false"><span class="nav-link-text">By Year</span></a></li><li class="nav-item" role="presentation"><a id="tab-by-type" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#by-type" data-scrolling="false" href="#by-type" aria-controls="by-type" aria-selected="false"><span class="nav-link-text">By Type</span></a></li><li class="nav-item" role="presentation"><a id="tab-by-size" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#by-size" data-scrolling="false" href="#by-size" aria-controls="by-size" aria-selected="false"><span class="nav-link-text">By Size</span></a></li><li class="nav-item" role="presentation"><a id="tab-clustering" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#clustering" data-scrolling="false" href="#clustering" aria-controls="clustering" aria-selected="false"><span class="nav-link-text">Clustering</span></a></li><li class="nav-item" role="presentation"><a id="tab-pca" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#pca" data-scrolling="false" href="#pca" aria-controls="pca" aria-selected="false"><span class="nav-link-text">PCA</span></a></li></ul></div></div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-introduction" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#introduction" data-scrolling="false" href="#introduction" aria-controls="introduction" aria-selected="true"><span class="nav-link-text">Introduction</span></a></li><li class="nav-item" role="presentation"><a id="tab-cultivars" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#cultivars" data-scrolling="false" href="#cultivars" aria-controls="cultivars" aria-selected="false"><span class="nav-link-text">Cultivars</span></a></li><li class="nav-item" role="presentation"><a id="tab-all-parameters" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#all-parameters" data-scrolling="false" href="#all-parameters" aria-controls="all-parameters" aria-selected="false"><span class="nav-link-text">All Parameters</span></a></li><li class="nav-item" role="presentation"><a id="tab-selected-parameters" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#selected-parameters" data-scrolling="false" href="#selected-parameters" aria-controls="selected-parameters" aria-selected="false"><span class="nav-link-text">Selected Parameters</span></a></li><li class="nav-item" role="presentation"><a id="tab-pasting-properties" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#pasting-properties" data-scrolling="false" href="#pasting-properties" aria-controls="pasting-properties" aria-selected="false"><span class="nav-link-text">Pasting Properties</span></a></li><li class="nav-item" role="presentation"><a id="tab-labels" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#labels" data-scrolling="false" href="#labels" aria-controls="labels" aria-selected="false"><span class="nav-link-text">Labels</span></a></li></ul></div></div>
 </nav>
 </header>
 <div class="page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages dashboard-sidebar-container">  
@@ -117,66 +117,11 @@ grid-auto-rows: minmax(0, 1fr);">
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
 </div>
-</div><div id="overall" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-overall">
+</div><div id="cultivars" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-cultivars">
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
 <div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<p>Distribution of the rice quality parameters.</p>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
-grid-auto-rows: minmax(0, 1fr);">
-<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Distribution" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-header"><div class="card-title html-fill-item html-fill-container">Distribution</div></div>
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output-display html-fill-item html-fill-container">
-<div class="shiny-plot-output html-fill-item html-fill-container" id="Histogram" style="width:100%;height:400px;"></div>
-</div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div>
-</div>
-</div><div id="by-year" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-by-year">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<p>Distribution of the rice quality parameters by year.</p>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Distribution by Year" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-header"><div class="card-title html-fill-item html-fill-container">Distribution by Year</div></div>
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output-display html-fill-item html-fill-container">
-<div class="shiny-plot-output html-fill-item html-fill-container" id="BoxplotYear" style="width:100%;height:400px;"></div>
-</div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div>
-</div><div id="by-type" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-by-type">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<p>Distribution of the rice quality parameters by their type (Pureline or Hybrid).</p>
+<p>Distribution of a rice quality parameter by the type of cultivar.</p>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
     <template>Expand</template>
@@ -198,11 +143,13 @@ grid-auto-rows: minmax(0, 1fr);">
     </span>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-</div><div id="by-size" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-by-size">
+</div><div id="all-parameters" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-all-parameters">
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
 <div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<p>Distribution of the rice quality parameters by their grain size (long or medium).</p>
+<p>Clustering of cultivars by their <em>average</em> performance in terms of the <strong>head rice yield (HRY)</strong>, <strong>mild rice yield (MRY)</strong>, <strong>field fissures</strong>, <strong>brown chalk</strong>, and <strong>peak</strong>, <strong>trough</strong>, <strong>breakdown</strong>, <strong>setback</strong>, and <strong>final</strong> viscosities. The HRY and MRY are further summarized using their area under the curve.</p>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
     <template>Expand</template>
@@ -210,11 +157,26 @@ grid-auto-rows: minmax(0, 1fr);">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
     </span>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Distribution by Grain Size" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-header"><div class="card-title html-fill-item html-fill-container">Distribution by Grain Size</div></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Hierarchical Clustering" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title html-fill-item html-fill-container">Hierarchical Clustering</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div class="shiny-plot-output html-fill-item html-fill-container" id="BoxplotGrain" style="width:100%;height:400px;"></div>
+<div class="shiny-plot-output html-fill-item html-fill-container" id="ClusterAnalysisALL" style="width:100%;height:400px;"></div>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-title="K-means clustering with dimension reduction" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title html-fill-item html-fill-container">K-means clustering with dimension reduction</div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="shiny-plot-output html-fill-item html-fill-container" id="PCAALL" style="width:100%;height:400px;"></div>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -224,10 +186,70 @@ grid-auto-rows: minmax(0, 1fr);">
     </span>
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-</div><div id="clustering" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-clustering">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Clustering by pasting properties" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-header"><div class="card-title html-fill-item html-fill-container">Clustering by pasting properties</div></div>
+</div>
+</div><div id="selected-parameters" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-selected-parameters">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Clustering of cultivars by their <em>average</em> performance in terms of the <strong>head rice yield (HRY)</strong>, <strong>mild rice yield (MRY)</strong>, <strong>field fissures</strong>, and <strong>brown chalk</strong> only. The HRY and MRY are further summarized using their area under the curve.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Hierarchical Clustering" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title html-fill-item html-fill-container">Hierarchical Clustering</div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="shiny-plot-output html-fill-item html-fill-container" id="ClusterAnalysisHRY" style="width:100%;height:400px;"></div>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-title="K-means clustering with dimension reduction" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title html-fill-item html-fill-container">K-means clustering with dimension reduction</div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="shiny-plot-output html-fill-item html-fill-container" id="PCAHRY" style="width:100%;height:400px;"></div>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div><div id="pasting-properties" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-pasting-properties">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Clustering of cultivars by their <em>average</em> performance in terms of the <strong>peak</strong>, <strong>trough</strong>, <strong>breakdown</strong>, <strong>setback</strong>, and <strong>final</strong> viscosities only.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Hierarchical Clustering" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title html-fill-item html-fill-container">Hierarchical Clustering</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
 <div class="shiny-plot-output html-fill-item html-fill-container" id="ClusterAnalysis" style="width:100%;height:400px;"></div>
@@ -238,15 +260,38 @@ grid-auto-rows: minmax(0, 1fr);">
     <span class="bslib-full-screen-enter badge rounded-pill">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
     </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div>
-</div><div id="pca" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-pca">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Data vsualization" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-header"><div class="card-title html-fill-item html-fill-container">Data vsualization</div></div>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-title="K-means clustering with dimension reduction" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title html-fill-item html-fill-container">K-means clustering with dimension reduction</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
 <div class="shiny-plot-output html-fill-item html-fill-container" id="PCA" style="width:100%;height:400px;"></div>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div><div id="labels" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-labels">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>These are the numeric labels used for the cluster analysis of cultivars.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-title="Cultivar labels" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header"><div class="card-title html-fill-item html-fill-container">Cultivar labels</div></div>
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container no-overflow-x">
+<div id="TableLabels" class="shiny-html-output html-fill-item html-fill-container"></div>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -266,29 +311,15 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="form-group shiny-input-container">
 <label class="control-label" id="variable-label" for="variable">Quality Parameter:</label>
 <div>
-<select id="variable" class="shiny-input-select"><option value="HMC-RT" selected="">HMC-RT</option>
-<option value="HMC-AM5200">HMC-AM5200</option>
+<select id="variable" class="shiny-input-select"><option value="MRY" selected="">MRY</option>
+<option value="HRY">HRY</option>
 <option value="FieldFissures">FieldFissures</option>
-<option value="Protein">Protein</option>
-<option value="TotalLipidContent">TotalLipidContent</option>
 <option value="Wbrown_Chalk">Wbrown_Chalk</option>
-<option value="Wbrown_Length">Wbrown_Length</option>
-<option value="Wbrown_Width">Wbrown_Width</option>
 <option value="Peak">Peak</option>
 <option value="Trough">Trough</option>
 <option value="Breakdown">Breakdown</option>
-<option value="Final">Final</option>
 <option value="Setback">Setback</option>
-<option value="MRY">MRY</option>
-<option value="HRY">HRY</option>
-<option value="SLC">SLC</option>
-<option value="NIR_ColorL">NIR_ColorL</option>
-<option value="NIR_Colora">NIR_Colora</option>
-<option value="NIR_Colorb">NIR_Colorb</option>
-<option value="NIR_ProtCont">NIR_ProtCont</option>
-<option value="HCM_L">HCM_L</option>
-<option value="HCM_a">HCM_a</option>
-<option value="HCM_b">HCM_b</option></select>
+<option value="Final">Final</option></select>
 <script type="application/json" data-for="variable" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
 </div>
 </div>
@@ -317,6 +348,7 @@ library(readxl)
 library(ggplot2)
 library(ggformula)
 library(factoextra) # For cluster analysis
+library(zoo) # For Area Under the Curve (AUC)
 
 ################################################################################
 # Read data
@@ -329,16 +361,40 @@ rice.data = read_excel("data/cultivar_data_2019-2023.xlsx")
 
 rice.data = rice.data %>%  mutate_at(c("Year", "Cultivar", "PurelineHybrid", "Grain Size"), as.factor)
 
-select_variables = tbl_vars(rice.data)[c(5:12, 63:67)]
+select_variables = tbl_vars(rice.data)[c(6:13, 64:68)]
 subset_rice.data = rice.data %>% select(all_of(select_variables))
 
-time_variables = c("MRY", "HRY", "SLC", "NIR_ColorL", "NIR_Colora", "NIR_Colorb", "NIR_ProtCont", "HCM_L", "HCM_a", "HCM_b")
-var_names = c(tbl_vars(subset_rice.data), time_variables)
- 
-# Data for clustering
+nontime_vars = c("FieldFissures", "Wbrown_Chalk", "Peak", "Trough", "Breakdown", "Setback", "Final")
+time_variables = c("MRY", "HRY")
+var_names = c(time_variables, nontime_vars)
 
-#grouping.data = rice.data %>% filter(Year == 2022) %>% select(c("Cultivar","Peak","Trough", "Breakdown", "Setback", "Final"))
-grouping.data = rice.data %>% select(c("Peak","Trough", "Breakdown", "Setback", "Final"))
+# Data for pasting properties
+pasting.data = rice.data %>% select(c("Cultivar", "Peak", "Trough", "Breakdown", "Setback", "Final")) %>% 
+  group_by(Cultivar) %>% 
+  summarise_all(mean, na.rm = TRUE)
+
+# Data for HRY, MRY, Field Fissures, and WBrown_Chalk only.
+varis.for.auc = c("MRY", "HRY")
+recorded.time <- c(10, 15, 20, 30, 40)
+AUC <- function(x, z){
+  sum(diff(z)*rollmean(x,2))
+}
+AUC_variables <- matrix(NA, ncol = length(varis.for.auc), nrow = nrow(rice.data))
+citer <- 1
+for(variable in varis.for.auc){
+  aux.data <- rice.data %>% select(starts_with(variable))
+  AUC_variables[,citer] <- apply(aux.data, MARGIN = 1, FUN = AUC, z = recorded.time)
+  citer <- citer + 1
+}
+HRY.data = rice.data %>% select("Cultivar", "FieldFissures", "Wbrown_Chalk")
+HRY.data = HRY.data %>%  add_column("MRY" = AUC_variables[,1], "HRY" = AUC_variables[,1]) %>% 
+  group_by(Cultivar) %>% 
+  summarise_all(mean, na.rm = TRUE)
+# Replace missing entries with the mean
+HRY.data = HRY.data %>% mutate(across(-1, ~ ifelse(is.na(.), mean(., na.rm = TRUE), .)))
+
+# Generate all data.
+all.data = left_join(HRY.data, pasting.data, by = "Cultivar")
 
 ################################################################################
 # Plot theme
@@ -375,8 +431,7 @@ dataset = reactive({
         my.data = my.data %>% rename_with(~str_remove(., paste(input$variable, '_', sep = '')))
         my.data = my.data %>% rename_with(~str_remove(., 's'))
         var_sel = my.data %>%  colnames()
-        my.data = my.data %>% mutate("Year" = rice.data$Year, "PurelineHybrid" = rice.data$PurelineHybrid,
-                                     "Grain Size" = rice.data$`Grain Size`)
+        my.data = my.data %>% mutate("Cultivar" = rice.data$Cultivar)
         my.data = my.data %>% pivot_longer(cols = all_of(var_sel), names_to = "Time", values_to = input$variable)
         my.data = my.data %>% mutate_at("Time", as.numeric)  
     } else {
@@ -395,48 +450,14 @@ dataset = reactive({
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-output$Histogram <- renderPlot({
-  if (input$variable %in% time_variables){
-    my.plot = ggplot(dataset(), aes(y = .data[[input$variable]], x = Time)) + geom_point(color = uarpp_colors[1])
-    my.plot = my.plot + stat_summary(aes(y = .data[[input$variable]],group=1), fun.y=mean, colour=uarpp_colors[2], geom="line",group=1)
-  } else { 
-      my.plot = ggplot(dataset(), aes(x = .data[[input$variable]])) + geom_histogram(color = uarpp_colors[3], fill = uarpp_colors[1], alpha=0.7) 
-  my.plot = my.plot + ylab("Frequency")
-  }
-  my.plot = my.plot + plot.theme
-  print(my.plot)
-})
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-output$BoxplotYear <- renderPlot({
-  
-  if (input$variable %in% time_variables){
-    
-    my.plot = ggplot(dataset(), aes(y = .data[[input$variable]], x = Time, color = Year, group = Year)) + stat_summary(geom = "line", fun.y = mean, color = uarpp_colors[1]) + stat_summary(geom = "point", fun.y = mean, color = uarpp_colors[2])
-    
-  } else {
-    YearData = rice.data %>% select("Year")
-    YearDataset = dataset() %>% mutate(YearData)
-    my.plot = ggplot(YearDataset, aes(x = Year, y = .data[[input$variable]])) + geom_boxplot(color = uarpp_colors[3], fill = uarpp_colors[1], alpha=0.7) 
-    my.plot = my.plot + ylab(as.character(input$variable))  
-  }
-  
-  
-  my.plot = my.plot + plot.theme
-  print(my.plot)
-})
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
 output$BoxplotType <- renderPlot({
   
   if (input$variable %in% time_variables){
-    my.plot = ggplot(dataset(), aes(y = .data[[input$variable]], x = Time, color = PurelineHybrid, group = PurelineHybrid)) + stat_summary(geom = "line", fun.y = mean, color = uarpp_colors[1]) + stat_summary(geom = "point", fun.y = mean, color = uarpp_colors[2])
+    my.plot = ggplot(dataset(), aes(y = .data[[input$variable]], x = Time, color = Cultivar, group = Cultivar)) + stat_summary(geom = "line", fun = mean) + stat_summary(geom = "point", fun = mean)
   } else {
-      PureLineData = rice.data %>% select("PurelineHybrid")
-      PureLineDataset = dataset() %>% mutate(PureLineData)
-      my.plot = ggplot(PureLineDataset, aes(x = PurelineHybrid, y = .data[[input$variable]])) + geom_boxplot(color = uarpp_colors[3], fill = uarpp_colors[1], alpha=0.7) 
+      CultivarData = rice.data %>% select("Cultivar")
+      CultivarDataset = dataset() %>% mutate(CultivarData)
+      my.plot = ggplot(CultivarDataset, aes(y = Cultivar, x = .data[[input$variable]])) + geom_boxplot(color = uarpp_colors[3], fill = uarpp_colors[1], alpha=0.7) 
       my.plot = my.plot + ylab(as.character(input$variable))
   }
   
@@ -446,34 +467,52 @@ output$BoxplotType <- renderPlot({
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-output$BoxplotGrain <- renderPlot({
-  
-    if (input$variable %in% time_variables){
-    my.plot = ggplot(dataset(), aes(y = .data[[input$variable]], x = Time, color = `Grain Size`, group = `Grain Size`)) + stat_summary(geom = "line", fun.y = mean, color = uarpp_colors[1]) + stat_summary(geom = "point", fun.y = mean, color = uarpp_colors[2])
-  } else {
-    GrainData = rice.data %>% select("Grain Size")
-    GrainDataset = dataset() %>% mutate(GrainData)
-    my.plot = ggplot(GrainDataset, aes(x = `Grain Size`, y = .data[[input$variable]])) + geom_boxplot(color = uarpp_colors[3], fill = uarpp_colors[1], alpha=0.7) 
-    my.plot = my.plot + ylab(as.character(input$variable))
-  }
-  
-  my.plot = my.plot + plot.theme
-  print(my.plot)
-  
+output$ClusterAnalysisALL <- renderPlot({
+  res.hclust <- eclust(all.data[,-1], "hclust", k = input$k)
+  fviz_dend(res.hclust, rect = TRUE) + plot.theme # dendrogam
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+output$PCAALL <- renderPlot({
+  res.km <- eclust(all.data[,-1], "kmeans", nstart = 25, k = input$k) 
+  fviz_cluster(res.km) + plot.theme 
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+output$ClusterAnalysisHRY <- renderPlot({
+  res.hclust <- eclust(HRY.data[,-1], "hclust", k = input$k)
+  fviz_dend(res.hclust, rect = TRUE) + plot.theme # dendrogam
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+output$PCAHRY <- renderPlot({
+  res.km <- eclust(HRY.data[,-1], "kmeans", nstart = 25, k = input$k) 
+  fviz_cluster(res.km) + plot.theme 
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 output$ClusterAnalysis <- renderPlot({
-  res.hclust <- eclust(grouping.data, "hclust", k = input$k)
+  res.hclust <- eclust(pasting.data[,-1], "hclust", k = input$k)
   fviz_dend(res.hclust, rect = TRUE) + plot.theme # dendrogam
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 output$PCA <- renderPlot({
-  res.km <- eclust(grouping.data, "kmeans", nstart = 25, k = input$k) 
-  res.km + plot.theme 
+  res.km <- eclust(pasting.data[,-1], "kmeans", nstart = 25, k = input$k) 
+  fviz_cluster(res.km) + plot.theme
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+output$TableLabels <- renderTable({
+  label_df <- data.frame(
+  "Label" = 1:nrow(pasting.data[,1]),
+  "Cultivar" = pasting.data[,1])
 })
 </script>
  
@@ -506,12 +545,12 @@ ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
 </p>
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="dependencies">
-{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["selectize"]},{"type":"character","attributes":{},"value":["0.15.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www/shared/selectize"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["js/selectize.min.js","accessibility/js/selectize-plugin-a11y.min.js"]},{"type":"character","attributes":{},"value":["css/selectize.bootstrap3.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["shiny"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.9.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ionrangeslider-javascript"]},{"type":"character","attributes":{},"value":["2.3.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www/shared/ionrangeslider"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["js/ion.rangeSlider.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["shiny"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.9.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["strftime"]},{"type":"character","attributes":{},"value":["0.9.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www/shared/strftime"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["strftime-min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["shiny"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.9.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ionrangeslider-css"]},{"type":"character","attributes":{},"value":["2.3.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www/shared/ionrangeslider"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["css/ion.rangeSlider.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["shiny"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.9.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]}]}
+{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["selectize"]},{"type":"character","attributes":{},"value":["0.15.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www/shared/selectize"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["js/selectize.min.js","accessibility/js/selectize-plugin-a11y.min.js"]},{"type":"character","attributes":{},"value":["css/selectize.bootstrap3.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["shiny"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.9.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ionrangeslider-javascript"]},{"type":"character","attributes":{},"value":["2.3.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www/shared/ionrangeslider"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["js/ion.rangeSlider.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["shiny"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.9.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["strftime"]},{"type":"character","attributes":{},"value":["0.9.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www/shared/strftime"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["strftime-min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["shiny"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.9.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ionrangeslider-css"]},{"type":"character","attributes":{},"value":["2.3.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www/shared/ionrangeslider"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["css/ion.rangeSlider.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["shiny"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.9.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]}]}
 </script>
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76]}},"value":[{"type":"character","attributes":{},"value":["base","bslib","cachem","cellranger","cli","colorspace","compiler","datasets","digest","dplyr","evaluate","factoextra","fansi","fastmap","forcats","generics","ggformula","ggplot2","ggrepel","ggridges","glue","graphics","grDevices","grid","gtable","haven","hms","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","labelled","later","lifecycle","lubridate","magrittr","MASS","memoise","methods","mime","mosaicCore","munsell","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","readxl","renv","rlang","rmarkdown","rstudioapi","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tzdb","utf8","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["4.4.1","0.8.0","1.1.0","1.1.0","3.6.3","2.1-1","4.4.1","4.4.1","0.6.37","1.1.4","1.0.1","1.0.7","1.0.6","1.2.0","1.0.0","0.1.3","0.12.0","3.5.1","0.9.6","0.5.6","1.8.0","4.4.1","4.4.1","4.4.1","0.3.6","2.5.4","1.1.3","0.5.8.1","1.6.4","1.6.15","0.1.4","1.8.9","1.49","2.13.0","1.4.1","1.0.4","1.9.3","2.0.3","7.3-60.2","2.0.1","4.4.1","0.12","0.9.4.0","0.5.1","1.9.0","2.0.3","1.3.2","1.0.2","2.5.1","1.0.13-1","2.1.5","1.4.3","1.0.7","1.1.4","2.29","0.17.1","0.4.9","1.3.0","1.9.1","4.4.1","1.8.4","1.5.1","3.2.1","1.3.1","1.2.1","2.0.0","0.3.0","4.4.1","0.4.0","1.2.4","4.4.1","0.6.5","3.0.2","0.49","1.8-4","2.3.10"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78]}},"value":[{"type":"character","attributes":{},"value":["base","bslib","cachem","cellranger","cli","colorspace","compiler","datasets","digest","dplyr","evaluate","factoextra","fansi","fastmap","forcats","generics","ggformula","ggplot2","ggrepel","ggridges","glue","graphics","grDevices","grid","gtable","haven","hms","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","labelled","later","lattice","lifecycle","lubridate","magrittr","MASS","memoise","methods","mime","mosaicCore","munsell","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","readxl","renv","rlang","rmarkdown","rstudioapi","sass","scales","shiny","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","timechange","tools","tzdb","utf8","utils","vctrs","withr","xfun","xtable","yaml","zoo"]},{"type":"character","attributes":{},"value":["4.4.1","0.8.0","1.1.0","1.1.0","3.6.3","2.1-1","4.4.1","4.4.1","0.6.37","1.1.4","1.0.1","1.0.7","1.0.6","1.2.0","1.0.0","0.1.3","0.12.0","3.5.1","0.9.6","0.5.6","1.8.0","4.4.1","4.4.1","4.4.1","0.3.6","2.5.4","1.1.3","0.5.8.1","1.6.4","1.6.15","0.1.4","1.8.9","1.49","2.13.0","1.4.1","0.22-6","1.0.4","1.9.3","2.0.3","7.3-60.2","2.0.1","4.4.1","0.12","0.9.4.0","0.5.1","1.9.0","2.0.3","1.3.2","1.0.2","2.5.1","1.0.13-1","2.1.5","1.4.3","1.0.7","1.1.4","2.29","0.17.1","0.4.9","1.3.0","1.9.1","4.4.1","1.8.4","1.5.1","3.2.1","1.3.1","1.2.1","2.0.0","0.3.0","4.4.1","0.4.0","1.2.4","4.4.1","0.6.5","3.0.2","0.49","1.8-4","2.3.10","1.8-14"]}]}]}
 </script>
 <!--/html_preserve-->
 

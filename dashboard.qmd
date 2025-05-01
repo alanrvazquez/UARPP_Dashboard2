@@ -20,6 +20,7 @@ library(readxl)
 library(ggplot2)
 library(ggformula)
 library(factoextra) # For cluster analysis
+library(zoo) # For Area Under the Curve (AUC)
 
 ################################################################################
 # Read data
@@ -35,15 +36,37 @@ rice.data = rice.data %>%  mutate_at(c("Year", "Cultivar", "PurelineHybrid", "Gr
 select_variables = tbl_vars(rice.data)[c(6:13, 64:68)]
 subset_rice.data = rice.data %>% select(all_of(select_variables))
 
-time_variables = c("MRY", "HRY", "SLC", "NIR_ColorL", "NIR_Colora", "NIR_Colorb", "NIR_ProtCont", "HCM_L", "HCM_a", "HCM_b")
-var_names = c(tbl_vars(subset_rice.data), time_variables)
- 
-# Data for clustering
+nontime_vars = c("FieldFissures", "Wbrown_Chalk", "Peak", "Trough", "Breakdown", "Setback", "Final")
+time_variables = c("MRY", "HRY")
+var_names = c(time_variables, nontime_vars)
 
-#grouping.data = rice.data %>% filter(Year == 2022) %>% select(c("Cultivar","Peak","Trough", "Breakdown", "Setback", "Final"))
-pasting.data = rice.data %>% select(c("Cultivar", "Peak","Trough", "Breakdown", "Setback", "Final")) %>% 
+# Data for pasting properties
+pasting.data = rice.data %>% select(c("Cultivar", "Peak", "Trough", "Breakdown", "Setback", "Final")) %>% 
   group_by(Cultivar) %>% 
-  summarise_all(mean)
+  summarise_all(mean, na.rm = TRUE)
+
+# Data for HRY, MRY, Field Fissures, and WBrown_Chalk only.
+varis.for.auc = c("MRY", "HRY")
+recorded.time <- c(10, 15, 20, 30, 40)
+AUC <- function(x, z){
+  sum(diff(z)*rollmean(x,2))
+}
+AUC_variables <- matrix(NA, ncol = length(varis.for.auc), nrow = nrow(rice.data))
+citer <- 1
+for(variable in varis.for.auc){
+  aux.data <- rice.data %>% select(starts_with(variable))
+  AUC_variables[,citer] <- apply(aux.data, MARGIN = 1, FUN = AUC, z = recorded.time)
+  citer <- citer + 1
+}
+HRY.data = rice.data %>% select("Cultivar", "FieldFissures", "Wbrown_Chalk")
+HRY.data = HRY.data %>%  add_column("MRY" = AUC_variables[,1], "HRY" = AUC_variables[,1]) %>% 
+  group_by(Cultivar) %>% 
+  summarise_all(mean, na.rm = TRUE)
+# Replace missing entries with the mean
+HRY.data = HRY.data %>% mutate(across(-1, ~ ifelse(is.na(.), mean(., na.rm = TRUE), .)))
+
+# Generate all data.
+all.data = left_join(HRY.data, pasting.data, by = "Cultivar")
 
 ################################################################################
 # Plot theme
@@ -201,8 +224,86 @@ output$BoxplotType <- renderPlot({
 plotOutput("BoxplotType")
 ```
 
+# All Parameters
 
-# Clustering
+## Description
+
+Clustering of cultivars by their *average* performance in terms of the **head rice yield (HRY)**, **mild rice yield (MRY)**, **field fissures**, **brown chalk**, and **peak**, **trough**, **breakdown**, **setback**, and **final** viscosities. The HRY and MRY are further summarized using their area under the curve.
+
+## Clustering
+
+```{r}
+#| context: server
+
+output$ClusterAnalysisALL <- renderPlot({
+  res.hclust <- eclust(all.data[,-1], "hclust", k = input$k)
+  fviz_dend(res.hclust, rect = TRUE) + plot.theme # dendrogam
+})
+```
+
+```{r}
+#| title: Hierarchical Clustering
+plotOutput("ClusterAnalysisALL")
+```
+
+```{r}
+#| context: server
+
+output$PCAALL <- renderPlot({
+  res.km <- eclust(all.data[,-1], "kmeans", nstart = 25, k = input$k) 
+  fviz_cluster(res.km) + plot.theme 
+})
+```
+
+```{r}
+#| title: K-means clustering with dimension reduction
+plotOutput("PCAALL")
+```
+
+
+# Selected Parameters
+
+## Description
+
+Clustering of cultivars by their *average* performance in terms of the **head rice yield (HRY)**, **mild rice yield (MRY)**, **field fissures**, and **brown chalk** only. The HRY and MRY are further summarized using their area under the curve.
+
+## Clustering
+
+```{r}
+#| context: server
+
+output$ClusterAnalysisHRY <- renderPlot({
+  res.hclust <- eclust(HRY.data[,-1], "hclust", k = input$k)
+  fviz_dend(res.hclust, rect = TRUE) + plot.theme # dendrogam
+})
+```
+
+```{r}
+#| title: Hierarchical Clustering
+plotOutput("ClusterAnalysisHRY")
+```
+
+```{r}
+#| context: server
+
+output$PCAHRY <- renderPlot({
+  res.km <- eclust(HRY.data[,-1], "kmeans", nstart = 25, k = input$k) 
+  fviz_cluster(res.km) + plot.theme 
+})
+```
+
+```{r}
+#| title: K-means clustering with dimension reduction
+plotOutput("PCAHRY")
+```
+
+# Pasting Properties
+
+## Description
+
+Clustering of cultivars by their *average* performance in terms of the **peak**, **trough**, **breakdown**, **setback**, and **final** viscosities only. 
+
+## Clustering
 
 ```{r}
 #| context: server
@@ -214,25 +315,22 @@ output$ClusterAnalysis <- renderPlot({
 ```
 
 ```{r}
-#| title: Clustering by pasting properties
+#| title: Hierarchical Clustering
 plotOutput("ClusterAnalysis")
 ```
 
-# Pasting Properties
-
-Clustering of cultivars by their *average* performance in terms of the **peak**, **trough**, **breakdown**, **setback**, and **final** viscosities. 
 
 ```{r}
 #| context: server
 
 output$PCA <- renderPlot({
   res.km <- eclust(pasting.data[,-1], "kmeans", nstart = 25, k = input$k) 
-  res.km + plot.theme 
+  fviz_cluster(res.km) + plot.theme
 })
 ```
 
 ```{r}
-#| title: Data vsualization
+#| title: K-means clustering with dimension reduction
 plotOutput("PCA")
 ```
 
@@ -247,7 +345,6 @@ output$TableLabels <- renderTable({
   label_df <- data.frame(
   "Label" = 1:nrow(pasting.data[,1]),
   "Cultivar" = pasting.data[,1])
-  
 })
 ```
 
