@@ -466,42 +466,42 @@ output$BoxplotType <- renderPlot({
  
 <script type="application/shiny-prerendered" data-context="server">
 output$ClusterAnalysisALL <- renderPlot({
-  res.hclust <- eclust(all.data[,-1], "hclust", k = input$k)
+  res.hclust <- eclust(all.data[,-1], "hclust", k = input$k, stand = TRUE)
   fviz_dend(res.hclust, rect = TRUE) + plot.theme # dendrogam
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 output$PCAALL <- renderPlot({
-  res.km <- eclust(all.data[,-1], "kmeans", nstart = 25, k = input$k) 
+  res.km <- eclust(all.data[,-1], "kmeans", nstart = 25, k = input$k, stand = TRUE) 
   fviz_cluster(res.km) + plot.theme 
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 output$ClusterAnalysisHRY <- renderPlot({
-  res.hclust <- eclust(HRY.data[,-1], "hclust", k = input$k)
+  res.hclust <- eclust(HRY.data[,-1], "hclust", k = input$k, stand = TRUE)
   fviz_dend(res.hclust, rect = TRUE) + plot.theme # dendrogam
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 output$PCAHRY <- renderPlot({
-  res.km <- eclust(HRY.data[,-1], "kmeans", nstart = 25, k = input$k) 
+  res.km <- eclust(HRY.data[,-1], "kmeans", nstart = 25, k = input$k, stand = TRUE) 
   fviz_cluster(res.km) + plot.theme 
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 output$ClusterAnalysis <- renderPlot({
-  res.hclust <- eclust(pasting.data[,-1], "hclust", k = input$k)
+  res.hclust <- eclust(pasting.data[,-1], "hclust", k = input$k, stand = TRUE)
   fviz_dend(res.hclust, rect = TRUE) + plot.theme # dendrogam
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 output$PCA <- renderPlot({
-  res.km <- eclust(pasting.data[,-1], "kmeans", nstart = 25, k = input$k) 
+  res.km <- eclust(pasting.data[,-1], "kmeans", nstart = 25, k = input$k, stand = TRUE) 
   fviz_cluster(res.km) + plot.theme
 })
 </script>
