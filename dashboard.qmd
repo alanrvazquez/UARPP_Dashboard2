@@ -1,5 +1,5 @@
 ---
-title: "Cultivar Data 2019-2023"
+title: "RPP Dashboard"
 author: ""
 logo: "images/UARPP-LogoV2.png"
 format: 
@@ -33,22 +33,21 @@ rice.data = read_excel("data/cultivar_data_2019-2023_May6.xlsx")
 # Preprocessing
 ################################################################################
 
-rice.data = rice.data %>%  mutate_at(c("Year", "Cultivar", "PurelineHybrid", "Grain Size"), as.factor)
+rice.data = rice.data %>%  mutate_at(c("Year", "Cultivar", "Pureline Hybrid", "Grain Size"), as.factor)
 
 select_variables = tbl_vars(rice.data)[c(6:13, 64:68)]
 subset_rice.data = rice.data %>% select(all_of(select_variables))
 
-nontime_vars = c("FieldFissures", "Wbrown_Chalk", "Peak", "Trough", "Breakdown", "Setback", "Final")
-time_variables = c("MRY", "HRY")
-var_names = c(time_variables, nontime_vars)
+nontime_vars = c("Field Fissures", "Windseedle Brown Rice Chalkiness", "Peak Viscosity", "Trough Viscosity", "Breakdown Viscosity", "Setback Viscosity", "Final Viscosity")
+time_variables = c("Milled Rice Yield", "Head Rice Yield")
 
 # Data for pasting properties
-pasting.data = rice.data %>% select(c("Cultivar", "Peak", "Trough", "Breakdown", "Setback", "Final")) %>% 
+pasting.data = rice.data %>% select(c("Cultivar", "Peak Viscosity", "Trough Viscosity", "Breakdown Viscosity", "Setback Viscosity", "Final Viscosity")) %>% 
   group_by(Cultivar) %>% 
   summarise_all(mean, na.rm = TRUE)
 
 # Data for HRY, MRY, Field Fissures, and WBrown_Chalk only.
-varis.for.auc = c("MRY", "HRY")
+varis.for.auc = c("Milled Rice Yield", "Head Rice Yield")
 recorded.time <- c(10, 15, 20, 30, 40)
 
 AUC <- function(x, z){
@@ -61,8 +60,8 @@ for(variable in varis.for.auc){
   AUC_variables[,citer] <- apply(aux.data, MARGIN = 1, FUN = AUC, z = recorded.time)
   citer <- citer + 1
 }
-HRY.data = rice.data %>% select("Cultivar", "FieldFissures", "Wbrown_Chalk")
-HRY.data = HRY.data %>%  add_column("MRY" = AUC_variables[,1], "HRY" = AUC_variables[,1]) %>% 
+HRY.data = rice.data %>% select("Cultivar", "Field Fissures", "Windseedle Brown Rice Chalkiness")
+HRY.data = HRY.data %>%  add_column("Milled Rice Yield" = AUC_variables[,1], "Head Rice Yield" = AUC_variables[,1]) %>% 
   group_by(Cultivar) %>% 
   summarise_all(mean, na.rm = TRUE)
 # Replace missing entries with the mean
@@ -70,6 +69,7 @@ HRY.data = HRY.data %>% mutate(across(-1, ~ ifelse(is.na(.), mean(., na.rm = TRU
 
 # Generate all data.
 all.data = left_join(HRY.data, pasting.data, by = "Cultivar")
+var_names = colnames(all.data)[-1]
 
 ################################################################################
 # Plot theme
@@ -95,8 +95,6 @@ plot.theme <- theme_minimal() +
     legend.text = element_text(size = 18, color = "#000000"),
     legend.title = element_text(size = 20, color = "#A0192E", face = "bold")
   )
-
-
 ```
 
 
@@ -110,7 +108,7 @@ plot.theme <- theme_minimal() +
 #            c("All", "2019", "2020", "2021", "2022", "2023"))
 
 #varSelectInput("variable", "Quality Parameter:", subset_rice.data)
-selectInput("variable", "Quality Parameter:", var_names)
+selectInput("variable", "Rice Parameter:", var_names)
 sliderInput("k", "Groups:", min = 2, max = 5, value = 3)
 ```
 
@@ -170,9 +168,13 @@ Use the navigation menu on the left to explore various sections of the dashboard
 
 We hope this interactive platform enhances understanding of the complex factors driving rice processing and quality—ultimately supporting breeders, producers, processors, and consumers in making informed decisions.
 
+## Version
+
+**Version**: The dashboard has data from cultivars in the years of 2019 to 2023. 
+
 # Cultivars
 
-Distribution of a rice quality parameter by the type of cultivar.
+Distribution of a rice parameter by the type of cultivar.
 
 ```{r}
 #| context: server
@@ -185,7 +187,7 @@ output$BoxplotType <- renderPlot({
       CultivarData = rice.data %>% select("Cultivar")
       CultivarDataset = dataset() %>% mutate(CultivarData)
       my.plot = ggplot(CultivarDataset, aes(y = Cultivar, x = .data[[input$variable]])) + geom_boxplot(color = uarpp_colors[3], fill = uarpp_colors[1], alpha=0.7) 
-      my.plot = my.plot + ylab(as.character(input$variable))
+      my.plot = my.plot 
   }
   
   my.plot = my.plot + plot.theme
@@ -194,7 +196,7 @@ output$BoxplotType <- renderPlot({
 ```
 
 ```{r}
-#| title: Distribution by Type
+#| title: Distribution by Cultivar
 plotOutput("BoxplotType")
 ```
 
