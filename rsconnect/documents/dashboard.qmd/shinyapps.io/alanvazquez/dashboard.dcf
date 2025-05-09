@@ -5,7 +5,7 @@ account: alanvazquez
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 13542799
-bundleId: 10240275
+bundleId: 10258046
 url: https://alanvazquez.shinyapps.io/dashboard/
 version: 1
 quarto_version: 1.5.57

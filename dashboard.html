@@ -463,14 +463,15 @@ output$BoxplotType <- renderPlot({
   
   if (input$variable %in% time_variables){
     my.plot = ggplot(dataset(), aes(y = .data[[input$variable]], x = Time, color = Cultivar, group = Cultivar)) + stat_summary(geom = "line", fun = mean) + stat_summary(geom = "point", fun = mean)
+    my.plot = my.plot + plot.theme  
   } else {
       CultivarData = rice.data %>% select("Cultivar")
       CultivarDataset = dataset() %>% mutate(CultivarData)
       my.plot = ggplot(CultivarDataset, aes(y = Cultivar, x = .data[[input$variable]])) + geom_boxplot(color = uarpp_colors[3], fill = uarpp_colors[1], alpha=0.7) 
-      my.plot = my.plot 
+      my.plot = my.plot + plot.theme  + theme(axis.text.y = element_text(size = 13, color = "#000000"))
   }
   
-  my.plot = my.plot + plot.theme
+  
   print(my.plot)
 })
 </script>
